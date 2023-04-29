@@ -2,6 +2,15 @@
 
 Brzozowski derivativeを用いた正規表現のマッチングアルゴリズムをC++で実装したリポジトリです。
 
+文法
+
+- expression ::= concat ( '|' expression )*
+- concat ::= star ( concat )*
+- star ::= star '*' | atom
+- atom ::= char | '(' expression ')'
+- char ::= [a-z]
+
+
 
 
 #define USE_SIMPLIFICATION true
