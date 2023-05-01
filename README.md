@@ -24,6 +24,10 @@ Brzozowski derivativeを用いた正規表現のマッチングアルゴリズ�
 (dream|dreamer|erase|eraser)\*のdによる微分。
 ![2023-04-29_23h44_37](https://user-images.githubusercontent.com/46624038/235308749-4bf8517b-c2c8-4447-abc5-c7978651a81b.png)
 
+(dream|dreamer|erase|eraser)\*のd,rによる微分。
+![image](https://user-images.githubusercontent.com/46624038/235436792-a0eacbed-c863-4921-855c-6d733976db14.png)
+
+
 https://dreampuf.github.io/GraphvizOnline/
 
 にてdotファイルに吐かれたテキストをコピペして可視化を楽しむことができます。
