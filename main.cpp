@@ -11,8 +11,6 @@
 #include <cstdlib>
 
 #define USE_SIMPLIFICATION true
-#define SIMPLIFICATION_PER_ITERATION 1
-
 
 using namespace std;
 
@@ -401,9 +399,7 @@ bool match(Node* reg_expr, string s){
     for (int i = 0; i < int( s.size() ); i++){
         reg_expr = differentiate(reg_expr, s[i]);
         if (USE_SIMPLIFICATION) {
-            for (int i = 0; i < int( SIMPLIFICATION_PER_ITERATION ); i++){
-                reg_expr = simplify(reg_expr);
-            }
+            reg_expr = simplify(reg_expr);
         }
     }
 
@@ -413,10 +409,7 @@ bool match(Node* reg_expr, string s){
 bool match_verbose(Node* reg_expr,string s){
     // save to file. 
     if(USE_SIMPLIFICATION) {
-        // 何回もsimplify
-        for (int i = 0; i < int( SIMPLIFICATION_PER_ITERATION ); i++){
-            reg_expr = simplify(reg_expr);
-        }
+        reg_expr = simplify(reg_expr);
     }
     string filename = "graph" + to_string(s.size()) + s + ".dot";
     if(USE_SIMPLIFICATION) filename = "graph" + to_string(s.size()) + s + "_simplified.dot";
@@ -430,9 +423,7 @@ bool match_verbose(Node* reg_expr,string s){
         cout << endl;
         reg_expr = differentiate(reg_expr, s[0]);
         if (USE_SIMPLIFICATION) {
-            for (int i = 0; i < int( SIMPLIFICATION_PER_ITERATION ); i++){
                 reg_expr = simplify(reg_expr);
-            }
         }
         return match_verbose(reg_expr, s.substr(1));
     }
@@ -539,6 +530,10 @@ int main (int argc, char** argv){
 
 
     // test_match();
+
+    // concatinate png and make gif 端が切れないように大き目に
+    // system("convert -delay 100 -loop 0 *.png result.gif");
+
 
     
 }
