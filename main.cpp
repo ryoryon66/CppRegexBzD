@@ -186,8 +186,28 @@ public:
             label = string(1, value);
         }
 
+        string color = "black";
+        if (type == EPSILON_NODE) {
+            color = "blue";
+        } else if (type == EMPTY_NODE) {
+            color = "red";
+        } else if (type == STAR_NODE) {
+            color = "green";
+        } else if (type == OR_NODE) {
+            color = "orange";
+        } else if (type == CONCAT_NODE) {
+            color = "cyan";
+        } else if (type == CHAR_NODE) {
+            color = "purple";
+        }
 
-        out << "  " << get_id() << " [label=\"" << label << "\"];" << endl;
+
+        // 枠線の太さを太めにする
+        out << "  " << get_id() << " [label=\"" << label << "\", color=\"" << color << "\", penwidth=3];" << endl;
+
+
+
+        // out << "  " << get_id() << " [label=\"" << label << "\", color=\"" << color << "\"];" << endl;
         if (left != NULL) {
             out << "  " << get_id() << " -> " << left->get_id() << ";" << endl;
             left->to_dot(out);
@@ -201,10 +221,14 @@ public:
     void to_dot(string filename) {
         ofstream out(filename);
         out << "digraph G {" << endl;
+
         // show title 
         out << "  labelloc=\"t\";" << endl;
         // set filename and to_string as title
         out << "  label=\"" << filename << ": " << to_string() << "\";" << endl;
+        out << "  fontsize=20;" << endl;
+        out << "  fontname=\"Courier\";" << endl;
+
         to_dot(out);
         out << "}" << endl;
         out.close();
@@ -538,11 +562,11 @@ int main (int argc, char** argv){
     // test_match();
 
     // 画像を1000x1000に縮小拡大
-    system("mogrify -resize 1500x1500 *.png");
+    system("mogrify -resize 600x600 *.png");
 
 
     // png を逆順にして gif にする
-    system("convert -delay 100 -dispose previous -loop 0 `ls -r *.png` -extent 1500x1500 output.gif");
+    system("convert -delay 100 -dispose previous -loop 0 `ls -r *.png` -extent 600x600 output.gif");
 
     
 }
