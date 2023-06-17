@@ -441,8 +441,13 @@ bool match_verbose(Node* reg_expr,string s){
     if(USE_SIMPLIFICATION) {
         reg_expr = simplify(reg_expr);
     }
-    string filename = "graph" + to_string(s.size()) + s + ".dot";
-    if(USE_SIMPLIFICATION) filename = "graph" + to_string(s.size()) + s + "_simplified.dot";
+    // 0埋めする
+    string length = to_string(s.size());
+    while(length.size() < 4){
+        length = "0" + length;
+    }
+    string filename = "graph" + length + "_" + s + ".dot";
+    if(USE_SIMPLIFICATION) filename = "graph" + length + "_" + s + "_simplified.dot";
     reg_expr->to_dot(filename);
     if(s.size() == 0){
         return accept_epsilon(reg_expr);
