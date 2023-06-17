@@ -19,6 +19,9 @@ Brzozowski derivativeを用いた正規表現のマッチングアルゴリズ�
 
 で簡略化を適用するかを設定できます。
 
+![output](https://github.com/ryoryon66/CppRegexBzD/assets/46624038/6195aa7f-dcd0-4cb7-871a-45cadd15d1eb)
+
+
 (dream|dreamer|erase|eraser)\*
 ![image](https://user-images.githubusercontent.com/46624038/235308722-3ba2b734-76c3-416e-9a50-ed5408ed264d.png)
 (dream|dreamer|erase|eraser)\*のdによる微分。
@@ -26,6 +29,7 @@ Brzozowski derivativeを用いた正規表現のマッチングアルゴリズ�
 
 (dream|dreamer|erase|eraser)\*のd,rによる微分。
 ![image](https://user-images.githubusercontent.com/46624038/235436792-a0eacbed-c863-4921-855c-6d733976db14.png)
+
 
 
 https://dreampuf.github.io/GraphvizOnline/
