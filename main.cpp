@@ -11,8 +11,7 @@
 #include <cstdlib>
 
 #define USE_SIMPLIFICATION true
-#define SIMPLIFICATION_PER_ITERATION 4
-
+#define SIMPLIFICATION_PER_ITERATION 1
 
 
 using namespace std;
@@ -141,9 +140,9 @@ public:
             case CHAR_NODE:
                 return string(1, value);
             case STAR_NODE:
-                return left->to_string() + "*";
+                return "(" + left->to_string() + ")" + "*";
             case OR_NODE:
-                return "(" + left->to_string() + "|" + right->to_string() + ")";
+                return "(" + left->to_string() + ")" + "|"  + "(" + right->to_string() + ")";
             case CONCAT_NODE:
                 return left->to_string() + right->to_string();
             case EPSILON_NODE:
@@ -207,6 +206,13 @@ public:
         to_dot(out);
         out << "}" << endl;
         out.close();
+
+
+        string visualized_file = "visualized_" + filename.substr(0, filename.find_last_of('.')) + ".png";
+
+        // dot -Tpng filename -o visualized_file
+        string command = "dot -Tpng " + filename + " -o " + visualized_file;
+        system(command.c_str());
     }
 
 };
@@ -501,10 +507,7 @@ int main (int argc, char** argv){
         s = argv[2];
         bool remove_dot =  (*argv[3] == 'd');
 
-        cout << argv[3] << endl;
-        cout << (*argv[3] == 'd') << endl;
-        if (remove_dot) system("rm -f *.dot");
-        cout << remove_dot << endl;
+        if (remove_dot){ system("rm -f *.dot"); system("rm -f *.png"); }
     } else if (argc == 3){
         reg = argv[1];
         s = argv[2];
@@ -522,6 +525,7 @@ int main (int argc, char** argv){
     Parser parser(tokens);
     Node *root = parser.parse();
     
+    cout << "abstract syntax tree:" << endl;
     root->pretty_print(0);
 
     cout << "given_regular_expression: " << root->to_string() << endl;
@@ -534,7 +538,7 @@ int main (int argc, char** argv){
     cout << (ans ? "YES" : "NO") << endl;
 
 
-    test_match();
+    // test_match();
 
     
 }
