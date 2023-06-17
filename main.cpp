@@ -144,9 +144,9 @@ public:
             case CONCAT_NODE:
                 return left->to_string() + right->to_string();
             case EPSILON_NODE:
-                return "<epsilon>";
+                return "ε";
             case EMPTY_NODE:
-                return "<empty>";
+                return "∅";
         }
 
         cout << "error at to_string" << endl;
@@ -201,6 +201,10 @@ public:
     void to_dot(string filename) {
         ofstream out(filename);
         out << "digraph G {" << endl;
+        // show title 
+        out << "  labelloc=\"t\";" << endl;
+        // set filename and to_string as title
+        out << "  label=\"" << filename << ": " << to_string() << "\";" << endl;
         to_dot(out);
         out << "}" << endl;
         out.close();
@@ -211,6 +215,8 @@ public:
         // dot -Tpng filename -o visualized_file
         string command = "dot -Tpng " + filename + " -o " + visualized_file;
         system(command.c_str());
+
+
     }
 
 };
@@ -525,15 +531,18 @@ int main (int argc, char** argv){
     match_verbose(root, s);
 
 
-    bool ans = match(root, s);
-    cout << (ans ? "YES" : "NO") << endl;
+    bool is_accepted = match(root, s);
+    cout << (is_accepted ? "YES" : "NO") << endl;
 
 
     // test_match();
 
-    // concatinate png and make gif 端が切れないように大き目に
-    // system("convert -delay 100 -loop 0 *.png result.gif");
+    // 画像を1000x1000に縮小拡大
+    system("mogrify -resize 1500x1500 *.png");
 
+
+    // png を逆順にして gif にする
+    system("convert -delay 100 -dispose previous -loop 0 `ls -r *.png` -extent 1500x1500 output.gif");
 
     
 }
