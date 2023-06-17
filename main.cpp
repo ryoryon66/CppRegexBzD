@@ -523,13 +523,10 @@ int main (int argc, char** argv){
     string s;
 
 
-    if (argc == 4){
-        reg = argv[1];
-        s = argv[2];
-        bool remove_dot =  (*argv[3] == 'd');
+    system("rm -f *.dot"); 
+    system("rm -f *.png"); 
 
-        if (remove_dot){ system("rm -f *.dot"); system("rm -f *.png"); }
-    } else if (argc == 3){
+    if (argc == 3){
         reg = argv[1];
         s = argv[2];
     } else if (argc == 2){
