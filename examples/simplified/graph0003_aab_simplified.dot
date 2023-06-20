@@ -1,0 +1,17 @@
+digraph G {
+  labelloc="t";
+  label="graph0003_aab_simplified.dot: ((a)|(ab))*";
+  fontsize=20;
+  fontname="Courier";
+  lnugsquguwpxtyulcamotmhfmrquwi [label="*", color="green", penwidth=3];
+  lnugsquguwpxtyulcamotmhfmrquwi -> ahnufpewqqhphinuuokxljalqzswvt;
+  ahnufpewqqhphinuuokxljalqzswvt [label="|", color="orange", penwidth=3];
+  ahnufpewqqhphinuuokxljalqzswvt -> appfqsyjephmccrdhzolqtibdrygna;
+  appfqsyjephmccrdhzolqtibdrygna [label="a", color="purple", penwidth=3];
+  ahnufpewqqhphinuuokxljalqzswvt -> umkcfulgmvtpwuovicvggnltykokdm;
+  umkcfulgmvtpwuovicvggnltykokdm [label="concat", color="cyan", penwidth=3];
+  umkcfulgmvtpwuovicvggnltykokdm -> ujnpquhdhlwgrofvoqeectsmvjkiym;
+  ujnpquhdhlwgrofvoqeectsmvjkiym [label="a", color="purple", penwidth=3];
+  umkcfulgmvtpwuovicvggnltykokdm -> yutnkrvoansuhvsatzjnusjevrdmnh;
+  yutnkrvoansuhvsatzjnusjevrdmnh [label="b", color="purple", penwidth=3];
+}

@@ -1,0 +1,25 @@
+digraph G {
+  labelloc="t";
+  label="graph0001_b_simplified.dot: (ε)|(b)((a)|(ab))*";
+  fontsize=20;
+  fontname="Courier";
+  zleltxubikfshltweuluooatgcpvnf [label="concat", color="cyan", penwidth=3];
+  zleltxubikfshltweuluooatgcpvnf -> htbqipiucyistgdqkwpusdanowmrsm;
+  htbqipiucyistgdqkwpusdanowmrsm [label="|", color="orange", penwidth=3];
+  htbqipiucyistgdqkwpusdanowmrsm -> pxcuwqruvoarwelwnghuklxcptauhz;
+  pxcuwqruvoarwelwnghuklxcptauhz [label="epsilon", color="blue", penwidth=3];
+  htbqipiucyistgdqkwpusdanowmrsm -> yjozeolnixvpncleocsdwkrwvbxvxi;
+  yjozeolnixvpncleocsdwkrwvbxvxi [label="b", color="purple", penwidth=3];
+  zleltxubikfshltweuluooatgcpvnf -> abpmagkffufkswdwqsotcblxmkqbyb;
+  abpmagkffufkswdwqsotcblxmkqbyb [label="*", color="green", penwidth=3];
+  abpmagkffufkswdwqsotcblxmkqbyb -> qblhljpashuhgagwzvylsdunajgrhr;
+  qblhljpashuhgagwzvylsdunajgrhr [label="|", color="orange", penwidth=3];
+  qblhljpashuhgagwzvylsdunajgrhr -> mknsweggxjukdfxmhohbqhrvmdkmqd;
+  mknsweggxjukdfxmhohbqhrvmdkmqd [label="a", color="purple", penwidth=3];
+  qblhljpashuhgagwzvylsdunajgrhr -> ptgaivpagkfayskpqvmqetvaxytemk;
+  ptgaivpagkfayskpqvmqetvaxytemk [label="concat", color="cyan", penwidth=3];
+  ptgaivpagkfayskpqvmqetvaxytemk -> pgxqbrnhrvfxdutnyaamprjdtyhhum;
+  pgxqbrnhrvfxdutnyaamprjdtyhhum [label="a", color="purple", penwidth=3];
+  ptgaivpagkfayskpqvmqetvaxytemk -> jethevretauedzqkxecpbidlyivoix;
+  jethevretauedzqkxecpbidlyivoix [label="b", color="purple", penwidth=3];
+}

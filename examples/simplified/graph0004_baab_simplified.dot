@@ -1,0 +1,25 @@
+digraph G {
+  labelloc="t";
+  label="graph0004_baab_simplified.dot: (ε)|(b)((a)|(ab))*";
+  fontsize=20;
+  fontname="Courier";
+  jzdwawsfwrltbymcsljpbbevpauitj [label="concat", color="cyan", penwidth=3];
+  jzdwawsfwrltbymcsljpbbevpauitj -> htseokifeggegydxmwbhkusjutuwgp;
+  htseokifeggegydxmwbhkusjutuwgp [label="|", color="orange", penwidth=3];
+  htseokifeggegydxmwbhkusjutuwgp -> jnhcrfbinyzfrqqnfkvuouourknmdf;
+  jnhcrfbinyzfrqqnfkvuouourknmdf [label="epsilon", color="blue", penwidth=3];
+  htseokifeggegydxmwbhkusjutuwgp -> odpcslgexevnqjmiohoddydpytkgog;
+  odpcslgexevnqjmiohoddydpytkgog [label="b", color="purple", penwidth=3];
+  jzdwawsfwrltbymcsljpbbevpauitj -> rudnexlrnzqtrtenkdhmswgnxgblhx;
+  rudnexlrnzqtrtenkdhmswgnxgblhx [label="*", color="green", penwidth=3];
+  rudnexlrnzqtrtenkdhmswgnxgblhx -> eponjfmumepshdujoqkoszoqqcnotp;
+  eponjfmumepshdujoqkoszoqqcnotp [label="|", color="orange", penwidth=3];
+  eponjfmumepshdujoqkoszoqqcnotp -> snzrhfgujuchgkagfgtiozghcykylu;
+  snzrhfgujuchgkagfgtiozghcykylu [label="a", color="purple", penwidth=3];
+  eponjfmumepshdujoqkoszoqqcnotp -> lodgvdlnxbqwgmgmypeawuazdvdjaw;
+  lodgvdlnxbqwgmgmypeawuazdvdjaw [label="concat", color="cyan", penwidth=3];
+  lodgvdlnxbqwgmgmypeawuazdvdjaw -> qodkodzlktdwecmtxrfvfouiiftius;
+  qodkodzlktdwecmtxrfvfouiiftius [label="a", color="purple", penwidth=3];
+  lodgvdlnxbqwgmgmypeawuazdvdjaw -> kyasodrzypefhifeknibxktrhwgueq;
+  kyasodrzypefhifeknibxktrhwgueq [label="b", color="purple", penwidth=3];
+}

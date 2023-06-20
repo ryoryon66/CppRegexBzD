@@ -1,0 +1,27 @@
+digraph G {
+  labelloc="t";
+  label="graph0002_am_simplified.dot: (am)|(amer)";
+  fontsize=20;
+  fontname="Courier";
+  rnkaekeirzljgbixjsmmhyltyqxuav [label="|", color="orange", penwidth=3];
+  rnkaekeirzljgbixjsmmhyltyqxuav -> efwhtlsyauyvrejvwxbfvtnykjmfoh;
+  efwhtlsyauyvrejvwxbfvtnykjmfoh [label="concat", color="cyan", penwidth=3];
+  efwhtlsyauyvrejvwxbfvtnykjmfoh -> rbrlafpumsuiydwztrbwdatcwsukkl;
+  rbrlafpumsuiydwztrbwdatcwsukkl [label="a", color="purple", penwidth=3];
+  efwhtlsyauyvrejvwxbfvtnykjmfoh -> hujctbbqgueuwtofkyjkebjsruappy;
+  hujctbbqgueuwtofkyjkebjsruappy [label="m", color="purple", penwidth=3];
+  rnkaekeirzljgbixjsmmhyltyqxuav -> bcsigrjgyetnjdwsenhxgvdpjkkzkv;
+  bcsigrjgyetnjdwsenhxgvdpjkkzkv [label="concat", color="cyan", penwidth=3];
+  bcsigrjgyetnjdwsenhxgvdpjkkzkv -> tbalwkdriqdmotfwlarsqkwjefewyv;
+  tbalwkdriqdmotfwlarsqkwjefewyv [label="a", color="purple", penwidth=3];
+  bcsigrjgyetnjdwsenhxgvdpjkkzkv -> mxikzehdxuxplmpfzvagclshnaauxl;
+  mxikzehdxuxplmpfzvagclshnaauxl [label="concat", color="cyan", penwidth=3];
+  mxikzehdxuxplmpfzvagclshnaauxl -> wsvccejbqzjqprsjeksxqzatuubbub;
+  wsvccejbqzjqprsjeksxqzatuubbub [label="m", color="purple", penwidth=3];
+  mxikzehdxuxplmpfzvagclshnaauxl -> epunctcladwdymqorttorrqacwfejd;
+  epunctcladwdymqorttorrqacwfejd [label="concat", color="cyan", penwidth=3];
+  epunctcladwdymqorttorrqacwfejd -> snfwahqyxtuvncomkifkskzrqzeyit;
+  snfwahqyxtuvncomkifkskzrqzeyit [label="e", color="purple", penwidth=3];
+  epunctcladwdymqorttorrqacwfejd -> kiuufnglfhiwchlwrwquxdcivchxhd;
+  kiuufnglfhiwchlwrwquxdcivchxhd [label="r", color="purple", penwidth=3];
+}
