@@ -323,28 +323,29 @@ Node* simplify(Node* expr){
         case CHAR_NODE:
             return new Node(CHAR_NODE, expr->value, NULL, NULL);
         case STAR_NODE:
+            expr = new Node(STAR_NODE, '*', simplify(expr->left), NULL);
             // epsilon* = epsilon 何も受理しないが0回以上繰り返すのはepsilonのみ受理する
             if (expr->left->type == EPSILON_NODE || expr->left->type == EMPTY_NODE){
                 return new Node(EPSILON_NODE, ' ', NULL, NULL);
             } else{
                 return new Node(STAR_NODE, '*', simplify(expr->left), NULL);
             }
-        case OR_NODE:
+        case OR_NODE: {
 
-            // empty | a = a
-            if (expr->left->type == EMPTY_NODE){
-                return simplify(expr->right);
+            Node* or_node ((new Node(OR_NODE, '|', simplify(expr->left), simplify(expr->right))));
+            
+            // 左右を簡約化した結果、自身が簡約化できることがある
+            if (or_node->left->type == EMPTY_NODE){
+                return or_node->right;
+            } else if(or_node->right->type == EMPTY_NODE){
+                return or_node->left;
+            } else{
+                return or_node;
             }
-
-            // a | empty = a
-            if (expr->right->type == EMPTY_NODE){
-                return simplify(expr->left);
-            }
-
-            return new Node(OR_NODE, '|', simplify(expr->left), simplify(expr->right));
-
+        }
 
         case CONCAT_NODE:
+            expr = new Node(CONCAT_NODE, '.', simplify(expr->left), simplify(expr->right));
             if (expr->left->type == EMPTY_NODE || expr->right->type == EMPTY_NODE){
                 return new Node(EMPTY_NODE, ' ', NULL, NULL);
             }
@@ -403,7 +404,7 @@ Node* differentiate(Node* expr,char c){
         case OR_NODE:
             return new Node(OR_NODE, '|', differentiate(expr->left, c), differentiate(expr->right, c));
         
-        case CONCAT_NODE://可視化を面白くするために永続ではなく短命を採用。
+        case CONCAT_NODE://永続ではなく短命を採用。
             if(accept_epsilon(expr->left)){
                 Node* tmp1 = new Node(CONCAT_NODE, '.', differentiate(expr->left, c), expr->right->copy());
                 Node* tmp2 = differentiate(expr->right, c);
@@ -437,9 +438,10 @@ bool match(Node* reg_expr, string s){
 }
 
 bool match_verbose(Node* reg_expr,string s){
-    // save to file. 
+ 
     if(USE_SIMPLIFICATION) {
         reg_expr = simplify(reg_expr);
+        // reg_expr = simplify(reg_expr);
     }
     // 0埋めする
     string length = to_string(s.size());

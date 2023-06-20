@@ -2,7 +2,29 @@
 
 Brzozowski derivativeを用いた正規表現のマッチングアルゴリズムをC++で実装したリポジトリです。微分の様子をgifファイルで保存します
 
-# 文法
+# 前提ソフトウェア
+
+```
+apt -y install imagemagick
+```
+
+以上を入れなくてもdotファイルを[このサイト](https://dreampuf.github.io/GraphvizOnline/)に張り付けることでASTを可視化することが可能です。
+
+# 使用方法
+
+```
+g++ main.cpp
+./a.out [正規表現] [文字列]
+```
+
+例
+```
+./a.out "(dream|dreamer)*" "dreamdreamer"
+```
+
+
+
+## 文法
 
 - expression ::= concat ( '|' expression )*
 - concat ::= star ( concat )*
@@ -11,11 +33,11 @@ Brzozowski derivativeを用いた正規表現のマッチングアルゴリズ�
 - char ::= [a-z]
 
 
-
+また
 ```
 #define USE_SIMPLIFICATION true
 ```
-で簡略化を適用するかを設定できます。
+で簡略化を適用するかを設定できます。(簡略化を設定しないと木が大きくなる)
 
 # (dream|dreamer)* へのdreamdreamerの受理判定
 ![sample](https://github.com/ryoryon66/CppRegexBzD/assets/46624038/0f669bbd-b9f1-49c7-9cfb-b453cf62fd2a)
