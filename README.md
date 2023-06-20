@@ -40,7 +40,8 @@ g++ main.cpp
 で簡略化を適用するかを設定できます。(簡略化を設定しないと木が大きくなる)
 
 # (dream|dreamer)* へのdreamdreamerの受理判定
-![sample](https://github.com/ryoryon66/CppRegexBzD/assets/46624038/0f669bbd-b9f1-49c7-9cfb-b453cf62fd2a)
+
+![sample](https://github.com/ryoryon66/CppRegexBzD/assets/46624038/e83ec52d-37a6-49ef-a5ec-e8dbf81d3565)
 
 ## (dream|dreamer|erase|eraser)\*
 ![image](https://user-images.githubusercontent.com/46624038/235308722-3ba2b734-76c3-416e-9a50-ed5408ed264d.png)
