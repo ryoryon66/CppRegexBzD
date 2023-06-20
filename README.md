@@ -39,6 +39,8 @@ g++ main.cpp
 ```
 で簡略化を適用するかを設定できます。(簡略化を設定しないと木が大きくなる)
 
+また出力例をexamples/以下に保存してあります。
+
 # (dream|dreamer)* へのdreamdreamerの受理判定
 
 ![sample](https://github.com/ryoryon66/CppRegexBzD/assets/46624038/e83ec52d-37a6-49ef-a5ec-e8dbf81d3565)
